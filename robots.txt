@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://joseliverame.github.io/mainindex-hth-com-cn/sitemap.xml
