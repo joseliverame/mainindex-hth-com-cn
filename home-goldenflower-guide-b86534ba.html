@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>炸金花游戏 · 再次相遇指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f2f3f5;
+            color: #2c2e33;
+            line-height: 1.65;
+            padding: 0 1rem;
+        }
+
+        .page-wrap {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2.2rem 0 3.5rem 0;
+        }
+
+        /* --- 顶部导航 --- */
+        .nav-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.75rem 1.5rem;
+            background: #ffffff;
+            padding: 0.9rem 2rem;
+            border-radius: 48px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            border: 1px solid #e8eaed;
+            margin-bottom: 2.8rem;
+        }
+
+        .nav-brand {
+            font-weight: 600;
+            font-size: 1.2rem;
+            letter-spacing: 0.02em;
+            color: #1f2937;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #3b424c;
+            font-size: 0.95rem;
+            padding: 0.2rem 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .nav-links a:hover {
+            border-bottom-color: #b8860b;
+            color: #1f2937;
+        }
+
+        /* --- hero 区域 --- */
+        .hero-section {
+            background: #ffffff;
+            border-radius: 32px;
+            border: 1px solid #e3e5e8;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.02);
+            padding: 2.8rem 2.4rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: #eef0f2;
+            color: #4a515c;
+            padding: 0.25rem 1rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            letter-spacing: 0.03em;
+            margin-bottom: 1.2rem;
+            border: 1px solid #dadde0;
+        }
+
+        .hero-section h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: #1c1f26;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-section p {
+            max-width: 700px;
+            margin-bottom: 1.6rem;
+            color: #404650;
+            font-size: 1rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #b88c3a;
+            color: #7b6226;
+            padding: 0.5rem 1.6rem;
+            border-radius: 60px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            cursor: default;
+            transition: all 0.2s;
+        }
+
+        .btn-outline:hover {
+            background: #f8f5ee;
+            border-color: #a6772b;
+        }
+
+        /* --- 核心介绍卡片 --- */
+        .intro-card {
+            background: #ffffff;
+            border-radius: 28px;
+            border: 1px solid #e2e5ea;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.02);
+            padding: 2rem 2.2rem;
+            margin-bottom: 2.2rem;
+        }
+
+        .intro-card h2 {
+            font-weight: 500;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1e2229;
+        }
+
+        .intro-card p {
+            margin-bottom: 0.75rem;
+        }
+
+        .intro-highlight {
+            background: #f8f9fb;
+            padding: 0.8rem 1.2rem;
+            border-left: 4px solid #b88c3a;
+            border-radius: 12px;
+            margin: 1.2rem 0 0.6rem 0;
+            font-size: 0.95rem;
+        }
+
+        /* --- 三个场景模块 (卡片网格) --- */
+        .scenes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.6rem;
+            margin: 2.2rem 0 2.5rem 0;
+        }
+
+        .scene-card {
+            background: #ffffff;
+            border-radius: 24px;
+            border: 1px solid #e3e5e9;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.01);
+            padding: 1.8rem 1.5rem 2rem 1.5rem;
+            transition: box-shadow 0.25s;
+        }
+
+        .scene-card:hover {
+            box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+        }
+
+        .scene-card .emoji-label {
+            font-size: 2rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .scene-card h3 {
+            font-size: 1.15rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #1f2937;
+        }
+
+        .scene-card p {
+            font-size: 0.94rem;
+            color: #4a4f59;
+        }
+
+        /* --- 常见说明 (FAQ 摘要) --- */
+        .faq-section {
+            background: #ffffff;
+            border-radius: 28px;
+            border: 1px solid #e2e5ea;
+            padding: 2rem 2.2rem;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .faq-section h2 {
+            font-weight: 500;
+            font-size: 1.45rem;
+            margin-bottom: 1.6rem;
+            color: #1e2229;
+        }
+
+        .faq-item {
+            padding: 0.9rem 0;
+            border-bottom: 1px solid #eceef0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            color: #232932;
+            margin-bottom: 0.25rem;
+        }
+
+        .faq-a {
+            color: #545b66;
+            font-size: 0.92rem;
+        }
+
+        /* --- 底部/收藏提示 --- */
+        .footer-note {
+            margin-top: 2.8rem;
+            padding: 1.2rem 0 0.4rem 0;
+            text-align: center;
+            border-top: 1px solid #dadde0;
+            color: #5d6572;
+            font-size: 0.9rem;
+        }
+
+        .footer-note a {
+            color: #7b6226;
+            text-decoration: none;
+            border-bottom: 1px dotted #b88c3a;
+        }
+
+        .footer-note a:hover {
+            border-bottom-style: solid;
+        }
+
+        /* --- 响应式微调 --- */
+        @media (max-width: 640px) {
+            .nav-bar {
+                padding: 0.7rem 1.2rem;
+                border-radius: 30px;
+            }
+            .nav-links {
+                gap: 1rem;
+            }
+            .hero-section {
+                padding: 2rem 1.2rem;
+            }
+            .hero-section h1 {
+                font-size: 1.8rem;
+            }
+            .intro-card, .faq-section {
+                padding: 1.5rem 1.2rem;
+            }
+            .scenes-grid {
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section h1 {
+                font-size: 1.5rem;
+            }
+            .btn-outline {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+
+    <!-- 顶部导航 -->
+    <nav class="nav-bar">
+        <span class="nav-brand">♠️ 牌桌笔记</span>
+        <div class="nav-links">
+            <a href="#">回顾</a>
+            <a href="#">规则</a>
+            <a href="#">牌型</a>
+            <a href="#">常见</a>
+        </div>
+    </nav>
+
+    <!-- Hero: 再次访问 收藏 持续关注 -->
+    <div class="hero-section">
+        <span class="hero-badge">📌 再次来到这里</span>
+        <h1>收藏 · 回看 · 保持熟悉</h1>
+        <p>
+            如果你曾体验过<strong>炸金花游戏</strong>的对局乐趣，又或者只是偶然路过想重新了解，这个页面适合你慢慢翻阅。
+            我们不想用夸张的承诺留住你，只希望整理清楚，让你每次回来都能快速找到关注的方向。
+        </p>
+        <div class="hero-actions">
+            <span class="btn-outline">📂 保存到书签</span>
+            <span style="font-size: 0.9rem; color: #6a727f;">或继续往下浏览</span>
+        </div>
+    </div>
+
+    <!-- 核心介绍卡片 -->
+    <div class="intro-card">
+        <h2>关于 <a href="https://home-goldenflower.com" style="color: #7b6226; text-decoration: none; border-bottom: 1px dashed #b88c3a;">炸金花游戏</a> 的基本面貌</h2>
+        <p>
+            炸金花（也称“拼三张”）是一种使用扑克牌进行的民间比牌游戏。每位玩家手持三张暗牌，通过比大小、心理博弈决定胜负。
+            它的节奏可快可慢，既是技术也比胆略。正因如此，许多人在闲暇时愿意打开网页，不受场地限制，与朋友或线上牌友来上一局。
+        </p>
+        <div class="intro-highlight">
+            💡 如果你之前已经体验过，现在回来可能更关心规则细节、常见疑问以及后续如何关注更新——下面的三个场景模块正是围绕这些整理。
+        </div>
+    </div>
+
+    <!-- 三个场景模块 -->
+    <div class="scenes-grid">
+        <div class="scene-card">
+            <div class="emoji-label">📖</div>
+            <h3>重温规则</h3>
+            <p>豹子 > 同花顺 > 金花 > 顺子 > 对子 > 散牌。特殊牌型如“235”可压豹子，但各地习惯略有不同，建议以你常玩的房间约定为准。</p>
+        </div>
+        <div class="scene-card">
+            <div class="emoji-label">🔍</div>
+            <h3>观察与心理</h3>
+            <p>三张牌的大小只是基础，真正让炸金花耐玩的是“闷牌”、“跟注”、“弃牌”之间的权衡。很多回头客都在研究如何更稳地判断对手风格。</p>
+        </div>
+        <div class="scene-card">
+            <div class="emoji-label">📌</div>
+            <h3>持续关注</h3>
+            <p>玩法讨论、常见误区、版本变动……如果你希望保持信息同步，可以把 <a href="https://home-goldenflower.com" style="color: #7b6226; text-decoration: none; border-bottom: 1px dotted #b88c3a;">炸金花游戏</a> 放进收藏夹，隔一阵子回来看一眼就够了。</p>
+        </div>
+    </div>
+
+    <!-- 常见说明 (FAQ 摘要) -->
+    <div class="faq-section">
+        <h2>❓ 一些被反复提及的说明</h2>
+
+        <div class="faq-item">
+            <div class="faq-q">· 炸金花可以使用哪些平台或网页？</div>
+            <div class="faq-a">目前有许多在线棋牌网站提供炸金花房间，规则细节可能稍有区别。建议优先选择界面清晰、说明完整的站点，比如 <a href="https://home-goldenflower.com" style="color: #7b6226; text-decoration: none; border-bottom: 1px dashed #b88c3a;">炸金花游戏</a> 这个页面对应的网站，方便你直接开始。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">· 是否有通用的牌型对照表？</div>
+            <div class="faq-a">豹子（AAA最大，222最小）> 同花顺 > 金花 > 顺子 > 对子 > 散牌。特殊组合如“2-3-5”在部分规则中能压豹子，但并非所有房间都采用，建议开局前确认。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">· 怎样保持对炸金花新玩法或调整的了解？</div>
+            <div class="faq-a">定期访问你收藏的站点，留意公告或玩法介绍即可。我们整理的内容也会根据常见疑问做补充，你可以把当前页面加为书签，方便后续回看。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">· “闷牌”到底是什么意思？</div>
+            <div class="faq-a">不看牌直接下注叫“闷牌”，通常闷牌的下注额比看牌后跟注少。这是一种给对手压力的策略，也是炸金花比较有特色的心理部分。</div>
+        </div>
+    </div>
+
+    <!-- 底部 + 收藏提示 -->
+    <div class="footer-note">
+        <p>再次回来时，你依然可以找到关于 <a href="https://home-goldenflower.com">炸金花游戏</a> 的朴素介绍与说明。<br>
+        不需要每次都从头摸索，收藏这个页面，让关注变得简单一些。</p>
+        <p style="margin-top: 0.8rem; font-size: 0.8rem; color: #8a92a0;">— 整理于日常 · 保持平实 —</p>
+    </div>
+
+</div>
+</body>
+</html>
