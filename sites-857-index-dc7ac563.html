@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>857直播 · 日常查询与延伸阅读参考</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f7f4f0;
+            font-family: 'Georgia', 'Times New Roman', 'Noto Serif SC', serif;
+            color: #2c2c2c;
+            line-height: 1.7;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        .page {
+            max-width: 840px;
+            margin: 0 auto;
+            background: #fefcf9;
+            padding: 2.5rem 2rem 3rem;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+        }
+
+        /* hero — 简洁标识与摘要 */
+        .hero {
+            border-bottom: 1px solid #e2dbd2;
+            padding-bottom: 1.8rem;
+            margin-bottom: 2.2rem;
+        }
+
+        .hero-sub {
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #9b8f82;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            color: #2b2a27;
+            margin-bottom: 0.3rem;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            color: #4d4944;
+            max-width: 600px;
+        }
+
+        /* 版式元素 */
+        h2 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            border-left: 4px solid #c1b4a6;
+            padding-left: 1rem;
+            margin: 2.5rem 0 1rem;
+            color: #36332e;
+        }
+
+        h3 {
+            font-weight: 400;
+            font-size: 1.1rem;
+            margin: 1.5rem 0 0.4rem;
+            color: #3d3934;
+        }
+
+        p, li {
+            font-size: 1rem;
+            color: #3b3732;
+        }
+
+        .inset-box {
+            background: #f3efe9;
+            border-left: 3px solid #cbbfb3;
+            padding: 1rem 1.3rem;
+            margin: 1.5rem 0;
+            border-radius: 0 3px 3px 0;
+            font-size: 0.95rem;
+        }
+
+        .inset-box strong {
+            color: #4f463e;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+            margin: 0.5rem 0 1rem;
+        }
+
+        ul li {
+            margin-bottom: 0.35rem;
+        }
+
+        .grid-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 1.8rem 0 0.8rem;
+        }
+
+        .card {
+            flex: 1 1 200px;
+            background: #faf7f3;
+            padding: 1.2rem 1rem;
+            border: 1px solid #e6dfd6;
+            border-radius: 2px;
+        }
+
+        .card span {
+            display: block;
+            font-size: 0.9rem;
+            color: #7b7065;
+            margin-bottom: 0.2rem;
+        }
+
+        .card .title {
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: #2f2b26;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-item {
+            margin: 1.2rem 0;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            color: #3d3731;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-a {
+            padding-left: 0.6rem;
+            border-left: 1px solid #dad2c8;
+            color: #4f4941;
+            font-size: 0.95rem;
+        }
+
+        .footer-note {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e2dbd2;
+            font-size: 0.9rem;
+            color: #736b61;
+        }
+
+        .footer-note a {
+            color: #3d3731;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            text-decoration-thickness: 0.5px;
+        }
+
+        .footer-note a:hover {
+            background: #e6dfd6;
+            text-decoration: none;
+        }
+
+        a {
+            color: #3d3731;
+        }
+
+        .inline-link {
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            text-decoration-thickness: 0.5px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+            .page {
+                padding: 1.8rem 1.2rem;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .grid-cards {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- hero -->
+    <div class="hero">
+        <div class="hero-sub">Reference · Query · Notes</div>
+        <h1>857直播 · 日常信息对照</h1>
+        <p>面向使用者、观察者与内容延伸阅读场景，提供结构化的背景说明与常见问题摘要。页面内容基于公开信息整理，供快速查阅与比照。</p>
+    </div>
+
+    <!-- 优势区：三个短卡片 -->
+    <h2>场景与特点</h2>
+    <div class="grid-cards">
+        <div class="card">
+            <span>01 查询对照</span>
+            <div class="title">频道与分类索引</div>
+            <p style="font-size:0.92rem; color:#4f4941;">按内容方向整理常见分类，便于快速定位感兴趣板块。</p>
+        </div>
+        <div class="card">
+            <span>02 延伸阅读</span>
+            <div class="title">背景与上下文</div>
+            <p style="font-size:0.92rem; color:#4f4941;">提供与平台相关的功能说明、使用提示及术语解释。</p>
+        </div>
+        <div class="card">
+            <span>03 参考提示</span>
+            <div class="title">注意与建议</div>
+            <p style="font-size:0.92rem; color:#4f4941;">汇总常规操作事项及常见疑问，辅助决策或理解。</p>
+        </div>
+    </div>
+
+    <!-- 说明区：正文+引用块 -->
+    <h2>版面与内容构成</h2>
+    <p>当前页面是为日常查询设计的轻量参考页，不涉及实时数据或个性化推荐。以下为<strong>核心板块说明</strong>：</p>
+    <ul>
+        <li><strong>频道区</strong> — 按内容类型划分，每类附带简要描述，方便对照选择。</li>
+        <li><strong>阅读栏</strong> — 整理常见用语、操作逻辑及平台惯例，适用于初次接触或需要复查的用户。</li>
+        <li><strong>提示框</strong> — 集中展示注意事项与边界说明（见下方引用块）。</li>
+    </ul>
+
+    <div class="inset-box">
+        <strong>📌 提示</strong> 本页为介绍性参考，内容与结构随信息源更新会做调整。若需了解最新分类与动态，可直接查阅<a href="https://sites-857.com" class="inline-link">857直播</a>相关版块。
+    </div>
+
+    <p>部分说明基于通用分类逻辑，可能与实际界面存在细微差异。建议结合页面内导航与筛选功能使用。</p>
+
+    <!-- 另一个引用/提示块 -->
+    <div class="inset-box" style="background:#f6f1ea; border-left-color:#b9ab9b;">
+        <strong>🔍 对照说明</strong> 不同终端（移动端/桌面端）下布局与入口名称可能略有不同，但核心分类保持一致。
+    </div>
+
+    <!-- FAQ摘要 -->
+    <h2>FAQ 摘要</h2>
+
+    <div class="faq-item">
+        <div class="faq-q">Q1 · 如何快速了解频道分类？</div>
+        <div class="faq-a">进入<a href="https://sites-857.com" class="inline-link">857直播</a>后，可在顶部或侧边栏查看分类标签；部分分类下还提供二级筛选。</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-q">Q2 · 页面上的推荐内容依据是什么？</div>
+        <div class="faq-a">推荐基于内容标签、热门程度与时间排序，不涉及个人画像；如需更精准筛选可使用搜索或分类过滤。</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-q">Q3 · 是否提供历史记录或收藏功能？</div>
+        <div class="faq-a">平台内一般包含基础浏览记录与收藏选项，具体入口可参考账户菜单或帮助区。详细操作可浏览<a href="https://sites-857.com" class="inline-link">857直播</a>相关页面。</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-q">Q4 · 如何反馈页面问题或提出建议？</div>
+        <div class="faq-a">通常通过页面底部的“意见反馈”或“帮助”通道提交，部分板块设有专门的联系方式。</div>
+    </div>
+
+    <!-- 底部链接 -->
+    <div class="footer-note">
+        <p>参考信息来源：<a href="https://sites-857.com">857直播</a> · 内容仅供对照与延伸阅读</p>
+        <p style="margin-top:0.6rem; font-size:0.85rem; color:#8c8276;">页面版本：2407 · 下一次结构更新将合并更多查询场景</p>
+    </div>
+
+</div>
+</body>
+</html>
